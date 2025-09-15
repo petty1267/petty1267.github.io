@@ -1,327 +1,137 @@
 <!DOCTYPE html>
-<!-- 
-  声明文档类型为HTML5，确保浏览器以标准模式渲染页面。
-  这是HTML文档的首要声明，必须放在第一行。
--->
 <html lang="zh-CN">
-<!-- 
-  <html> 标签是HTML文档的根元素，所有其他元素都包含在其中。
-  lang="zh-CN" 属性声明文档的主要语言为简体中文，有助于搜索引擎和屏幕阅读器。
--->
-
 <head>
-  <!-- 
-    <head> 部分包含文档的元数据（metadata）、标题、字符集声明和外部资源链接。
-    这部分内容不会直接显示在网页中，但对浏览器和搜索引擎至关重要。
-  -->
-  <meta charset="UTF-8">
-  <!-- 
-    指定文档使用UTF-8字符编码，这是万国码，可以正确显示中文、英文和各种特殊字符。
-    避免中文网页显示乱码的关键声明。
-  -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 
-    视口设置，使网页在不同设备上能够正确显示和缩放。
-    width=device-width: 宽度等于设备宽度
-    initial-scale=1.0: 初始缩放比例为1（不缩放）
-  -->
-  <title>HTML基础知识学习页面</title>
-  <!-- 
-    <title> 定义浏览器标签页上显示的标题，也是搜索引擎收录时显示的名称。
-    应简洁明了地描述页面内容。
-  -->
-  <style>
-    /* 这里是CSS样式代码，用于美化网页内容 */
-    body {
-      font-family: 'Microsoft YaHei', sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      color: #333;
-    }
-    
-    header, nav, main, footer, section {
-      margin-bottom: 20px;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    
-    h1 {
-      color: #2c3e50;
-    }
-    
-    h2 {
-      color: #3498db;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-    }
-    
-    .code-example {
-      background-color: #f8f9fa;
-      padding: 15px;
-      border-left: 4px solid #3498db;
-      overflow-x: auto;
-    }
-    
-    .note {
-      background-color: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指弹吉他之声</title>
+    <style>
+        /* CSS 样式部分 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a4a4a;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .album-art {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .btn-switch {
+            background-color: #4a4a4a;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-switch:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
-
 <body>
-  <!-- 
-    <body> 包含所有可见的网页内容。
-    以下是实际显示在浏览器中的内容。
-  -->
 
-  <!-- 页眉部分 -->
-  <header>
-    <!-- 
-      <header> 是HTML5的语义化标签，通常包含网站的标题、Logo和导航等。
-      语义化标签使代码更易读且对搜索引擎更友好[1](@ref)。
-    -->
-    <h1>HTML基础知识学习页面</h1>
-    <p>通过本页面学习HTML的核心概念和常用标签</p >
-  </header>
-
-  <!-- 导航部分 -->
-  <nav>
-    <!-- 
-      <nav> 定义导航链接部分，通常包含菜单或目录。
-    -->
-    <h2>页面导航</h2>
-    <ul>
-      <li><a href="#text-tags">文本标签</a ></li>
-      <li><a href="#multimedia">多媒体标签</a ></li>
-      <li><a href="#lists">列表标签</a ></li>
-      <li><a href="#tables">表格标签</a ></li>
-      <li><a href="#forms">表单标签</a ></li>
-      <li><a href="#semantic">语义化标签</a ></li>
-    </ul>
-  </nav>
-
-  <!-- 主要内容部分 -->
-  <main>
-    <!-- 
-      <main> 定义文档的主要内容，一个文档中只应有一个<main>元素。
-    -->
-
-    <!-- 文本标签部分 -->
-    <section id="text-tags">
-      <h2>文本标签</h2>
-      <p>HTML提供了多种文本格式化标签：</p >
-      
-      <div class="code-example">
-        <!-- 标题标签 -->
-        <h1>这是一级标题 (h1)</h1>
-        <h2>这是二级标题 (h2)</h2>
-        <h3>这是三级标题 (h3)</h3>
-        
-        <!-- 段落和文本格式化 -->
-        <p>这是一个段落 (&lt;p&gt;)。HTML使用标签来建立网页的结构，如段落、列表、标题、链接、图片等[2](@ref)。</p >
-        
-        <p>
-          <strong>这是加粗文本 (&lt;strong&gt;)</strong>，
-          <em>这是斜体文本 (&lt;em&gt;)</em>，
-          <u>这是下划线文本 (&lt;u&gt;)</u>。
-        </p >
-        
-        <!-- 超链接 -->
-        <p><a href="https://example.com" target="_blank">这是一个超链接 (&lt;a&gt;)</a ></p >
-      </div>
-      
-      <div class="note">
-        <strong>注意：</strong> HTML注释使用 &lt;!-- 注释内容 --&gt; 语法，注释内容不会显示在浏览器中[6](@ref)。
-      </div>
-    </section>
-
-    <!-- 多媒体标签部分 -->
-    <section id="multimedia">
-      <h2>多媒体标签</h2>
-      <p>HTML5提供了直接嵌入音频和视频的功能：</p >
-      
-      <div class="code-example">
-        <!-- 图像标签 -->
-        <img src="img.jpg" width="320" height="240"/>
-        <p>上面是使用 &lt;img&gt; 标签显示的图像</p >
-        
-        <!-- 
-          音频和视频标签在实际应用中需要真实文件路径
-          这里只展示标签结构，不会实际播放
-        -->
-        <audio controls>
-          <source src="audio.mp3" type="audio/mpeg">
-          您的浏览器不支持音频元素。
+    <div class="container">
+        <h1 id="songTitle">风之甬道</h1>
+        <p class="subtitle" id="songArtist">押尾光太郎</p>
+        <img src="https://picsum.photos/400/400?random=1" alt="专辑封面" class="album-art" id="albumArt">
+        <audio controls class="audio-player" id="audioPlayer">
+            <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
         </audio>
-        
-        <video width="320" height="240" controls>
-          <source src="movie.mp4" type="video/mp4">
-          您的浏览器不支持视频元素。
-        </video>
-      </div>
-    </section>
+        <button class="btn-switch" id="switchBtn">切换歌曲</button>
+    </div>
 
-    <!-- 列表标签部分 -->
-    <section id="lists">
-      <h2>列表标签</h2>
-      <p>HTML支持有序列表和无序列表：</p >
-      
-      <div class="code-example">
-        <h3>无序列表 (&lt;ul&gt;)</h3>
-        <ul>
-          <li>列表项 1</li>
-          <li>列表项 2</li>
-          <li>列表项 3</li>
-        </ul>
-        
-        <h3>有序列表 (&lt;ol&gt;)</h3>
-        <ol>
-          <li>第一项</li>
-          <li>第二项</li>
-          <li>第三项</li>
-        </ol>
-      </div>
-    </section>
+    <script>
+        // JavaScript 部分
+        const songTitle = document.getElementById('songTitle');
+        const songArtist = document.getElementById('songArtist');
+        const albumArt = document.getElementById('albumArt');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const switchBtn = document.getElementById('switchBtn');
 
-    <!-- 表格标签部分 -->
-    <section id="tables">
-      <h2>表格标签</h2>
-      <p>使用表格展示结构化数据：</p >
-      
-      <div class="code-example">
-        <table border="1">
-          <!-- 
-            border="1" 属性添加表格边框，实际开发中通常使用CSS控制样式
-          -->
-          <tr>
-            <th>姓名</th>
-            <th>年龄</th>
-            <th>城市</th>
-          </tr>
-          <tr>
-            <td>张三</td>
-            <td>25</td>
-            <td>北京</td>
-          </tr>
-          <tr>
-            <td>李四</td>
-            <td>30</td>
-            <td>上海</td>
-          </tr>
-        </table>
-      </div>
-    </section>
+        // 歌曲数据数组
+        const songs = [
+            {
+                title: "风之甬道",
+                artist: "押尾光太郎",
+                albumArtUrl: "https://picsum.photos/400/400?random=1",
+                audioUrl: "https://www.w3schools.com/tags/horse.mp3" // 这里是示例音频，你可以换成你自己的音频链接
+            },
+            {
+                title: "River Flows in You",
+                artist: "Sungha Jung",
+                albumArtUrl: "https://picsum.photos/400/400?random=2",
+                audioUrl: "https://www.w3schools.com/html/horse.mp3" // 这里是示例音频，你可以换成你自己的音频链接
+            },
+            {
+                title: "卡农 (Canon)",
+                artist: "押尾光太郎",
+                albumArtUrl: "https://picsum.photos/400/400?random=3",
+                audioUrl: "https://www.w3schools.com/tags/horse.mp3" // 这里是示例音频，你可以换成你自己的音频链接
+            }
+        ];
 
-    <!-- 表单标签部分 -->
-    <section id="forms">
-      <h2>表单标签</h2>
-      <p>表单用于收集用户输入：</p >
-      
-      <div class="code-example">
-        <form action="/submit-form" method="post">
-          <!-- 
-            action 属性指定表单数据提交的URL
-            method 属性指定HTTP方法（get或post）
-          -->
-          <div>
-            <label for="username">用户名：</label>
-            <input type="text" id="username" name="username" required>
-            <!-- 
-              required 属性表示此字段为必填项
-            -->
-          </div>
-          
-          <div>
-            <label for="password">密码：</label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          
-          <div>
-            <label for="email">电子邮件：</label>
-            <input type="email" id="email" name="email">
-          </div>
-          
-          <div>
-            <label>性别：</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">男</label>
+        let currentSongIndex = 0;
+
+        function updateSongInfo() {
+            const currentSong = songs[currentSongIndex];
+            songTitle.textContent = currentSong.title;
+            songArtist.textContent = currentSong.artist;
+            albumArt.src = currentSong.albumArtUrl;
             
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">女</label>
-          </div>
-          
-          <div>
-            <label for="message">留言：</label>
-            <textarea id="message" name="message" rows="4" cols="50"></textarea>
-          </div>
-          
-          <div>
-            <input type="submit" value提交表单">
-          </div>
-        </form>
-      </div>
-    </section>
+            // 更新音频源并重新加载
+            audioPlayer.src = currentSong.audioUrl;
+            audioPlayer.load();
+        }
 
-    <!-- 语义化标签部分 -->
-    <section id="semantic">
-      <h2>HTML5语义化标签</h2>
-      <p>HTML5引入了语义化标签，使代码更易读且对搜索引擎更友好[1](@ref)：</p >
-      
-      <div class="code-example">
-        <article>
-          <header>
-            <h3>文章标题</h3>
-            <p>发布日期：<time datetime="2023-10-01">2023年10月1日</time></p >
-          </header>
-          
-          <p>文章内容...HTML5引入了许多新的元素和特性，比如用于图形绘制的&lt;canvas&gt;元素，用于多媒体播放的&lt;audio&gt;和&lt;video&gt;标签，以及用于表单增强的新的输入类型[4](@ref)。</p >
-          
-          <footer>
-            <p>文章脚注信息</p >
-          </footer>
-        </article>
-        
-        <aside>
-          <h4>相关内容</h4>
-          <p>这里是侧边栏内容，通常包含相关链接、广告或补充信息。</p >
-        </aside>
-      </div>
-      
-      <div class="note">
-        <strong>语义化优势：</strong> 使用具有特定语义的标签来描述内容，而不是仅使用无语义的标签（如&lt;div&gt;和&lt;span&gt;），有助于搜索引擎优化（SEO），提高网页的可读性和可访问性[3](@ref)。
-      </div>
-    </section>
-  </main>
+        switchBtn.addEventListener('click', function() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            updateSongInfo();
+        });
 
-  <!-- 页脚部分 -->
-  <footer>
-    <!-- 
-      <footer> 定义文档或节的页脚，通常包含版权信息、联系方式等。
-    -->
-    <p>&copy; 2023 HTML学习页面. 所有权利保留.</p >
-    <p>联系我们：<a href="mailto:contact@example.com">contact@example.com</a ></p >
-  </footer>
+        // 页面加载时初始化
+        updateSongInfo();
+    </script>
 
-  <!-- 
-    以下是JavaScript代码，可以放在body末尾以确保HTML解析完成后再执行
-  -->
-  <script>
-    // 简单的JavaScript示例
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('HTML文档已完全加载和解析');
-      
-      // 可以在这里添加更多交互功能
-      const headings = document.querySelectorAll('h2');
-      headings.forEach(heading => {
-        heading.style.color = '#2c3e50';
-      });
-    });
-  </script>
 </body>
 </html>
